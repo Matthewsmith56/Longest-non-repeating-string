@@ -40,6 +40,7 @@ namespace Longest_non_repeating_string
             {
                 Console.Write(i);
             }
+            Console.WriteLine();
         }
     }
 }
