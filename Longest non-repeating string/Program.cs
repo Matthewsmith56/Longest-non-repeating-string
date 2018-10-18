@@ -10,6 +10,36 @@ namespace Longest_non_repeating_string
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter a string");
+            char[] input = Console.ReadLine().ToCharArray();
+
+            List<char> nonRep = new List<char>();
+            List<char> copiedList = new List<char>();
+
+            int index = 0;
+
+            foreach (var i in input)
+            {
+                if (nonRep.Count == 0)
+                {
+                    nonRep.Add(i);
+                }
+                else if (i != nonRep[index])
+                {
+                    nonRep.Add(i);
+                    index++;
+                }
+                else if (i == nonRep[index] && nonRep.Count > copiedList.Count)
+                {
+                    copiedList = nonRep.ToList();
+                    nonRep.Clear();
+                    index = 0;
+                }
+            }
+            foreach (var i in copiedList)
+            {
+                Console.Write(i);
+            }
         }
     }
 }
