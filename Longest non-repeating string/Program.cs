@@ -36,11 +36,22 @@ namespace Longest_non_repeating_string
                     index = 0;
                 }
             }
-            foreach (var i in copiedList)
+            if (copiedList.Count > nonRep.Count)
             {
+                foreach (var i in copiedList)
+                {
                 Console.Write(i);
+                }
+                    Console.WriteLine();
             }
-            Console.WriteLine();
+            else if (copiedList.Count < nonRep.Count)
+            {
+                foreach (var i in nonRep)
+                {
+                    Console.Write(i);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
